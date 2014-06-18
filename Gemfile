@@ -4,14 +4,23 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.1'
 # Use sqlite3 as the database for Active Record
-group :development do
+group :development, :test do
 	gem 'sqlite3'
-	gem 'rspec-rails'
+    gem 'guard-rspec'
+    gem 'guard-livereload'
+    gem 'spork-rails', github: 'sporkrb/spork-rails'
+    gem 'guard-spork'
+    gem 'childprocess'
 end
 
 group :test do
-	gem 'selenium-webdriver'
+	gem 'rspec-rails'
+    gem 'selenium-webdriver'
 	gem 'capybara'
+    gem 'factory_girl_rails'
+    gem 'cucumber'
+    gem 'cucumber-rails', :require => false
+    gem 'database_cleaner'
 end
 
 gem 'sass-rails', '~> 4.0.3'
