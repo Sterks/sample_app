@@ -23,6 +23,7 @@ group :test do
     gem 'database_cleaner'
 end
 
+gem 'bootstrap-sass'
 gem 'sass-rails', '~> 4.0.3'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
