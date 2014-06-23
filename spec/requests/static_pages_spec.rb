@@ -22,7 +22,7 @@ describe "StaticPages", :type => :feature do
   describe "Contact page" do
     before { visit contact_path }
 
-    it { should have_content('StaticPages#contact') }
+    it { should_not have_selector('h1', text: 'Contact') }
     it { should have_title(full_title('Contact')) }
   end
 
@@ -31,7 +31,18 @@ describe "StaticPages", :type => :feature do
 
     it { should have_content('StaticPages#about') }
     it { should have_title(full_title('About')) }
+  end
 
+  describe "StaticPages" do
+    it "should have the right links on the layout" do
+    visit root_path
+    click_on 'About'
+    expect(page).to have_title(full_title('About'))
+    click_on 'Help'
+    expect(page).to have_title(full_title('Help'))
+    click_on 'Contact'
+    expect(page).to have_title(full_title('Contact'))
+    end
   end
 end
 
