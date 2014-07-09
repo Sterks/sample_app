@@ -8,10 +8,18 @@
 /.bundle
 
 # Ignore the default SQLite database.
+/app/controllers/*.swo
+/app/controllers/*.swp
+.*.swp
+.*.swo
+.*.swm
+
 /db/*.sqlite3
 /db/*.sqlite3-journal
 /*.swo
 /*.swp
+/.git*
+
 
 # Ignore all logfiles and tempfiles.
 /log/*.log
